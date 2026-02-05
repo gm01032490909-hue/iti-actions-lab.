@@ -5,7 +5,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - run: echo "Hello world"
-  my-second-job:
+  setup-python:
     runs-on: ubuntu-latest
     steps:
-    - run: echo "Bye world"
+    - name: install-python
+      uses: actions/setup-python@v5
+
+    - name: python-v
+      run: python --version
